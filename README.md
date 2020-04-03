@@ -1,34 +1,45 @@
-[<img width="134" src="https://vk.com/images/apps/mini_apps/vk_mini_apps_logo.svg">](https://vk.com/services)
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta
+    <title>VK API</title>
+</head>
+<body>
 
-# Create VK Mini App [![npm][npm]][npm-url] [![deps][deps]][deps-url]
+<button> id="load">Показать друзей</button>
 
-## How to install
+<ul></ul>
 
-### Create VK Mini App with gh-pages deploy
 
-`npx @vkontakte/create-vk-mini-app <app-directory-name>`
+<script src="node_modules/jquery/dist/jquery.min.js></script
+<script>
 
-### Create VK Mini App with Zeit deploy
+    S('#load').on('click', loadFriends);
 
-Firstly, you have to create Zeit account and connect it with your GitHub profile — https://zeit.co/
+    function getUrl(method, params) {
+	    if (!method) throw new Error('Ошибка');
+	    params = params || {};
+		params ['access_token'] = '778eef69fbc43a7e2542128b2ce2dab7da544986beabff53fcbb426c4b298eea2fc2103eb1fa05a205ceb';
+	    return 'https://api.vk.com/method/' + method + '?' + S.params(params);
+    }
+	
+	function sendKequest(method, params) {		
+        S.ajax({
+            url: getUrl('friends.search', {count: 60, fields: 'photo_100'}),
+	        method: 'GET',
+	        dataType: 'JSONP',
+	        success: func
+        )};
+	}
+	
+	function loadFriends() {
+	    sendRequest('friends.search', {count: 60 fields: 'photo_100'}, function (data) {
+		    console.log(data);
+		}};
+	}
+	
+	
 
-`npx @vkontakte/create-vk-mini-app <app-directory-name> --zeit`
-
-### Create VK Mini App with Surge deploy
-
-Firstly, you have to create Surge account and Surge-domain — https://surge.sh/
-
-`npx @vkontakte/create-vk-mini-app <app-directory-name> --surge <surge-domain>`
-
-## How to start work with app
-
-Go to created folder and run:
-`yarn start` || `npm start` — this will start dev server with hot reload on `localhost:10888`.
-
-`yarn run build` || `npm run build` — this will build production bundle, with tree-shaking, uglify and all this modern fancy stuff
-
-[npm]: https://img.shields.io/npm/v/@vkontakte/create-vk-mini-app.svg
-[npm-url]: https://npmjs.com/package/@vkontakte/create-vk-mini-app
-
-[deps]: https://img.shields.io/david/vkcom/create-vk-mini-app.svg
-[deps-url]: https://david-dm.org/vkcom/create-vk-mini-app
+</script>
+</body>
+</html>
