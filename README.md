@@ -43,6 +43,3 @@
 </script>
 </body>
 </html>
-[<img width="134" src="https://vk.com/roulcoin?z=photo-193634843_457239018%2Falbum-193634843_0%2Frev">](https://vk.com/services)
-Привет мой друг тут будет что-то!
-
