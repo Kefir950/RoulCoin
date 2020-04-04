@@ -2,15 +2,14 @@
 <html>
 
 <body>
+<button>Alt+Shift+Кликни меня!</button>
 
-  <p>Перед скриптом...</p>
-
-  <script>
-    alert( 'Привет, мир!' );
-  </script>
-
-  <p>...После скрипта.</p>
-
+<script>
+  document.body.children[0].onclick = function(e) {
+    if (!e.altKey || !e.shiftKey) return;
+    alert( 'Ура!' );
+  }
+</script>
 </body>
 
 </html>
