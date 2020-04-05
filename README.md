@@ -1,15 +1,1 @@
-<!DOCTYPE HTML>
-<html>
-
-<body>
-<button>Alt+Shift+Кликни меня!</button>
-
-<script>
-  document.body.children[0].onclick = function(e) {
-    if (!e.altKey || !e.shiftKey) return;
-    alert( 'Ура!' );
-  }
-</script>
-</body>
-
-</html>
+Подпишись
